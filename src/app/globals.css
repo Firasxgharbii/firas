@@ -18,13 +18,30 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: linear-gradient(120deg, #ff9a9e 0%, #8b2408 100%), /* Couleurs de base */
+              linear-gradient(120deg, #fbc2eb 0%, #a6c1ee 100%); /* Couleurs de base */
+  background-size: 200% 200%; /* Double la taille pour l'animation */
+  animation: gradientAnimation 15s ease infinite; /* Animation fluide et infinie */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+/* Animation du dégradé */
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
 
 @layer utilities {
   .text-balance {
